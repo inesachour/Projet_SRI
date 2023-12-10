@@ -4,8 +4,6 @@ import SearchSpaceBool, SearchSpaceVec, EvaluationSpace
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.setFixedSize(800, 500)
-        Form.setGeometry(300, 150, 800, 500)
         font = QtGui.QFont()
         font.setFamily("Lato")
         Form.setFont(font)
@@ -15,7 +13,7 @@ class Ui_Form(object):
 
         #Recherche Booleenne
         self.rech_bool = QtWidgets.QLabel(Form)
-        self.rech_bool.setGeometry(QtCore.QRect(250, 150, 500, 75))
+        self.rech_bool.setGeometry(QtCore.QRect(250, 50, 500, 75))
         font = QtGui.QFont()
         font.setFamily("Lato")
         font.setPointSize(15)
@@ -24,7 +22,7 @@ class Ui_Form(object):
 
         #Recherche Vectorielle
         self.rech_vect = QtWidgets.QLabel(Form)
-        self.rech_vect.setGeometry(QtCore.QRect(250, 200, 500, 75))
+        self.rech_vect.setGeometry(QtCore.QRect(250, 100, 500, 75))
         font = QtGui.QFont()
         font.setFamily("Lato")
         font.setPointSize(15)
@@ -33,7 +31,7 @@ class Ui_Form(object):
 
         #Evaluation
         self.evaluation = QtWidgets.QLabel(Form)
-        self.evaluation.setGeometry(QtCore.QRect(250, 250, 500, 75))
+        self.evaluation.setGeometry(QtCore.QRect(250, 150, 500, 75))
         self.evaluation.setFont(font)
         self.evaluation.setObjectName("evaluation")
         self.evaluation.setStyleSheet("font-weight:600")

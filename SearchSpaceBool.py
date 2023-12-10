@@ -12,7 +12,7 @@ class SearchSpaceBool(object):
         font = QtGui.QFont()
         font.setFamily("Lato")
         Form.setFont(font)
-        Form.setStyleSheet("background-color: #f7f7f7;\n"
+        Form.setStyleSheet("background-color: #fff;\n"
 "color: #0C2444;")
         self.closeWindow = Form.close
         
