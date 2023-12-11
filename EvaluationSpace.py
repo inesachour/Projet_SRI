@@ -135,24 +135,6 @@ class EvaluationSpace(object):
         self.tableView.setModel(self.model)
         self.tableView.horizontalHeader().setDefaultSectionSize(124)
 
-
-        self.label4Combo = QtWidgets.QLabel(Form)
-        self.label4Combo.setGeometry(QtCore.QRect(180, 315, 200, 30))
-        self.label4Combo.setObjectName("label4Combo")
-        self.label4Combo.setText("Choisissez le modèle:")
-        self.label4Combo.setStyleSheet("font-size:18px;font-weight:600")
-
-        self.comboBox = QtWidgets.QComboBox(Form)
-        self.comboBox.setGeometry(QtCore.QRect(390, 320, 200, 25))
-        self.comboBox.setFont(font)
-        self.comboBox.setStyleSheet("color:#0C2444;font-weight:600")
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem('Inner.Product')
-        self.comboBox.addItem('Dice.Coef')
-        self.comboBox.addItem('Cosinus.Mesure')
-        self.comboBox.addItem('Jaccard.Mesure')
-
-
         self.label_5 = QtWidgets.QLabel(Form)
         self.label_5.setGeometry(QtCore.QRect(145, 530, 120, 40))
         self.label_5.setObjectName("label_5")
@@ -259,7 +241,6 @@ class EvaluationSpace(object):
 
     def evaluation(self):
 
-        choice = self.comboBox.currentText()
         dirrr = self.filesSelected
         allFiles = self.allFiles
 
@@ -268,20 +249,8 @@ class EvaluationSpace(object):
         vectorial = Vectorial.Vectorial(dirrr, query, 2)
         vectorialAll = Vectorial.Vectorial(allFiles, query, 2)
 
-        if choice == "Inner.Product":
-            selected = vectorial.innerProduct()
-            everything = vectorialAll.innerProduct()
-        elif choice == "Dice.Coef":
-            selected = vectorial.diceCoef()
-            everything = vectorialAll.diceCoef()
-
-        elif choice == "Cosinus.Mesure":
-            selected = vectorial.cosinusMesure()
-            everything = vectorialAll.cosinusMesure()
-
-        else:
-            selected = vectorial.jaccardMesure()
-            everything = vectorialAll.jaccardMesure()
+        selected = vectorial.jaccardMesure()
+        everything = vectorialAll.jaccardMesure()  
 
         selectedPert = []
         for doc in selected:    

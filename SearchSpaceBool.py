@@ -97,7 +97,7 @@ class SearchSpaceBool(object):
         Form.setWindowTitle(_translate("Form", "MonChef. | Fr"))
         self.label.setText(_translate("Form", ""))
         self.label_2.setText(_translate("Form", ""))
-        self.label_3.setText(_translate("Form", "Les résultats de la recherche dans l'ordre de pertinence:"))
+        self.label_3.setText(_translate("Form", "Résultats par ordre de pertinence:"))
         self.pushButton_2.setText(_translate("Form", "..."))
         self.label_4.setText(_translate("Form", ""))
         

@@ -81,7 +81,7 @@ class SearchSpaceVec(object):
         Form.setWindowTitle(_translate("Form", "MonChef. | Fr"))
         self.label.setText(_translate("Form", ""))
         self.label_2.setText(_translate("Form", ""))
-        self.label_3.setText(_translate("Form", "Resultats:"))
+        self.label_3.setText(_translate("Form", "Résultats par ordre de pertinence:"))
         
         
         self.pushButton_2.setText(_translate("Form", "..."))
