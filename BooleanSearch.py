@@ -8,6 +8,7 @@ class BooleanSearch():
         self.wordList = wordList
         self.query = query
 
+
     def createQueryToEval(self):
         query = re.sub(r'\(', ' ( ', self.query)
         query = re.sub(r'\)', ' ) ', query)

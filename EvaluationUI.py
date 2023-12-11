@@ -3,7 +3,7 @@ import Indexation, VectorialSearch
 import functools
 
 repertory = ""
-class EvaluationSpace(object):
+class EvaluationUI(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.setFixedSize(800, 550)
@@ -145,6 +145,7 @@ class EvaluationSpace(object):
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "MonChef. | Fr"))
@@ -161,6 +162,7 @@ class EvaluationSpace(object):
 
     def retour(self, event):
         self.closeWindow()
+
 
     def getDir(self):
         global repertory
@@ -270,11 +272,6 @@ class EvaluationSpace(object):
         self.listWidget.clear()
         self.listWidget2.clear()
         self.tableView.model().clear()
-
-
-
-
-
 
 
     def openFile(self, event, file):

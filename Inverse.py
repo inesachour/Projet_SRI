@@ -127,6 +127,7 @@ class Inverse():
         print(ponderations)
         return ponderations
 
+
     def getPondSpec(self, wordList):
         if self.exped == 1:
             files = self.dirFiles()

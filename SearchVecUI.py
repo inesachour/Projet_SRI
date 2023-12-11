@@ -4,7 +4,7 @@ import functools
 
 repertory = ""
 
-class SearchSpaceVec(object):
+class SearchVecUI(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.setFixedSize(800, 450)
@@ -76,6 +76,7 @@ class SearchSpaceVec(object):
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "MonChef. | Fr"))
@@ -91,6 +92,7 @@ class SearchSpaceVec(object):
     def retour(self, event):
         self.closeWindow()
 
+
     def getDir(self):
         global repertory
         directory = str(QtWidgets.QFileDialog.getExistingDirectory())
@@ -99,7 +101,6 @@ class SearchSpaceVec(object):
         repertory = directory
 
     
-
     def vectorialSearch(self, event = False):
         global repertory
         query = str(self.lineEdit.text().lower())
@@ -117,7 +118,6 @@ class SearchSpaceVec(object):
             itemTodisplay = "RSV("+res[0]+",Q) = "+str(res[1])
             self.listWidget.addItem(itemTodisplay)
         self.listWidget.itemClicked.connect(self.openFile)
-
 
         
     def openFile(self, item):

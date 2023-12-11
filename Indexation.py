@@ -31,6 +31,7 @@ class Indexation():
         ponctuation = re.compile('[^\w\s]?', re.IGNORECASE)
         return re.sub(ponctuation, '', text)
 
+
     def dropApostrophe(self, text):
         listText = text
         for word in text:
@@ -41,6 +42,7 @@ class Indexation():
 
         return listText
 
+
     def dropVirgule(self, text):
         listText = text
         for word in text:
@@ -49,6 +51,7 @@ class Indexation():
                 listText.append(newWord)
                 listText.remove(word)
         return listText
+
 
     def dropPoint(self, text):
         listText = text
@@ -59,9 +62,11 @@ class Indexation():
                 listText.remove(word)
         return listText
 
+
     def getFreqDist(self):
         text = self.getTextList()
         return nltk.FreqDist(text)
+
 
     def getTextList(self):
         text = self.load(1)
@@ -73,6 +78,7 @@ class Indexation():
 
 
         return text
+
 
     def nbWordOcc(self, word):
         freqDist = self.getFreqDist()

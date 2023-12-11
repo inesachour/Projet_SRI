@@ -63,6 +63,7 @@ class Ui_Form(object):
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "MonChef."))
@@ -72,23 +73,27 @@ class Ui_Form(object):
 
         self.exit.setText(_translate("Form", ""))
 
+
     def openBoolean(self, event):
         self.window = QtWidgets.QMainWindow()
-        self.ui = SearchBoolUI.SearchSpaceBool()
+        self.ui = SearchBoolUI.SearchBoolUI()
         self.ui.setupUi(self.window)
         self.window.show()
+
 
     def openVectorial(self, event):
         self.window = QtWidgets.QWidget()
-        self.ui = SearchVecUI.SearchSpaceVec()
+        self.ui = SearchVecUI.SearchVecUI()
         self.ui.setupUi(self.window)
         self.window.show()
 
+
     def openEvaluation(self, event):
         self.window = QtWidgets.QWidget()
-        self.ui = EvaluationUI.EvaluationSpace()
+        self.ui = EvaluationUI.EvaluationUI()
         self.ui.setupUi(self.window)
         self.window.show()
+
 
     def retour(self, event):
         Form.close()

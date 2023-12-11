@@ -4,7 +4,7 @@ import functools
 
 repertory = ""
 
-class SearchSpaceBool(object):
+class SearchBoolUI(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.setFixedSize(800, 450)
@@ -80,6 +80,7 @@ class SearchSpaceBool(object):
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "MonChef. | Fr"))
@@ -93,6 +94,7 @@ class SearchSpaceBool(object):
     def retour(self, event):
         self.closeWindow()
 
+
     def getDir(self):
         global repertory
         directory = str(QtWidgets.QFileDialog.getExistingDirectory())
@@ -102,7 +104,6 @@ class SearchSpaceBool(object):
         print(repertory)
 
     
-
     def booleanSearch(self, event = False):
         global repertory
         query = str(self.lineEdit.text().lower())
