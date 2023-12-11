@@ -49,7 +49,7 @@ class EvaluationSpace(object):
         self.pushButton_2 = QtWidgets.QPushButton(Form) 
         self.pushButton_2.setEnabled(True)
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.setGeometry(QtCore.QRect(600, 100, 50, 30))
+        self.pushButton_2.setGeometry(QtCore.QRect(600, 100, 80, 30))
         self.pushButton_2.setStyleSheet("background-color: #2596be;\n" "color:#fff;font-size:14px;border-top-right-radius: 15px;border-bottom-right-radius: 15px;")
         self.pushButton_2.clicked.connect(self.getDir)
 
@@ -159,7 +159,7 @@ class EvaluationSpace(object):
         self.label.setText(_translate("Form", ""))
         self.label_2.setText(_translate("Form", ""))
         self.label_3.setText(_translate("Form", "Les résultats de la recherche dans l'ordre de pertinence:"))
-        self.pushButton_2.setText(_translate("Form", "..."))
+        self.pushButton_2.setText(_translate("Form", "Importer"))
         self.pushButton3.setText(_translate("Form", "  Évaluer  "))
         self.pushButton4.setText(_translate("Form", "  Réinitialiser  "))
 

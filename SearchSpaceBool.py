@@ -52,7 +52,7 @@ class SearchSpaceBool(object):
         self.pushButton_2 = QtWidgets.QPushButton(Form) 
         self.pushButton_2.setEnabled(True)
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.setGeometry(QtCore.QRect(600, 100, 50, 30))
+        self.pushButton_2.setGeometry(QtCore.QRect(600, 100, 80, 30))
         self.pushButton_2.setStyleSheet("background-color: #2596be;\n"
 "color:#fff;font-size:14px;border-top-right-radius: 15px;border-bottom-right-radius: 15px;")
         self.pushButton_2.clicked.connect(self.getDir)
@@ -67,15 +67,13 @@ class SearchSpaceBool(object):
         self.label2Hide = QtWidgets.QLabel(Form)
         self.label2Hide.setGeometry(QtCore.QRect(110, 250, 600, 30))
         self.label2Hide.setObjectName("label2Hide")
-        self.label2Hide.setStyleSheet("font-weight:200;\n"
-"font-size:15px")
+        self.label2Hide.setStyleSheet("font-weight:200;\n" "font-size:15px")
         self.label2Hide.setText("NOTE: Ajouter votre collection, taper votre requête et cliquer sur l’icône de recherche. ")     
 
 
         self.label_4 = QtWidgets.QLabel(Form)
         self.label_4.setObjectName("label_4")
-        self.label_4.setStyleSheet("background-color: #fff;\n"
-"border-top-left-radius: 15px;border-bottom-left-radius: 15px;border: 1px solid #0C2444;border-right:0px")
+        self.label_4.setStyleSheet("background-color: #fff;\n" "border-top-left-radius: 15px;border-bottom-left-radius: 15px;border: 1px solid #0C2444;border-right:0px")
         pixmap2 = QtGui.QPixmap('images/search.png').scaledToWidth(18)
         self.label_4.setPixmap(pixmap2)
         self.label_4.setGeometry(QtCore.QRect(140, 100, 30, 30))
@@ -98,7 +96,7 @@ class SearchSpaceBool(object):
         self.label.setText(_translate("Form", ""))
         self.label_2.setText(_translate("Form", ""))
         self.label_3.setText(_translate("Form", "Résultats par ordre de pertinence:"))
-        self.pushButton_2.setText(_translate("Form", "..."))
+        self.pushButton_2.setText(_translate("Form", "Importer"))
         self.label_4.setText(_translate("Form", ""))
         
 
