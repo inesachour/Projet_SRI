@@ -12,8 +12,7 @@ class SearchSpaceVec(object):
         font = QtGui.QFont()
         font.setFamily("Lato")
         Form.setFont(font)
-        Form.setStyleSheet("background-color: #fff;\n"
-"color: #0C2444;")
+        Form.setStyleSheet("background-color: #fff;\n" "color: #0C2444;")
         self.closeWindow = Form.close
         
         Form.setWindowFlags(QtCore.Qt.FramelessWindowHint)
@@ -22,8 +21,7 @@ class SearchSpaceVec(object):
         self.labelTitle = QtWidgets.QLabel(Form)
         self.labelTitle.setGeometry(QtCore.QRect(280, 35, 500, 30))
         self.labelTitle.setObjectName("labelTitle")
-        self.labelTitle.setStyleSheet("font-weight:500;\n"
-"font-size:20px")
+        self.labelTitle.setStyleSheet("font-weight:500;\n" "font-size:20px")
         self.labelTitle.setText("Recherche Vectorielle")
 
         self.label = QtWidgets.QLabel(Form)
@@ -51,35 +49,22 @@ class SearchSpaceVec(object):
         self.listWidget.setGeometry(QtCore.QRect(180, 200, 450, 200))
         self.listWidget.setObjectName("listWidget")
         self.listWidget.setStyleSheet("background-color:#f7f7f7;font-size:22px;font-weight:500;")
-        self.listWidget.hide()
 
         self.pushButton_2 = QtWidgets.QPushButton(Form) 
         self.pushButton_2.setEnabled(True)
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_2.setGeometry(QtCore.QRect(600, 100, 50, 30))
-        self.pushButton_2.setStyleSheet("background-color: #2596be;\n"
-"color:#fff;font-size:14px;border-top-right-radius: 15px;border-bottom-right-radius: 15px;")
+        self.pushButton_2.setStyleSheet("background-color: #2596be;\n" "color:#fff;font-size:14px;border-top-right-radius: 15px;border-bottom-right-radius: 15px;")
         self.pushButton_2.clicked.connect(self.getDir)
 
         self.label_3 = QtWidgets.QLabel(Form)
         self.label_3.setGeometry(QtCore.QRect(150, 150, 500, 30))
         self.label_3.setObjectName("label_3")
-        self.label_3.setStyleSheet("font-weight:500;\n"
-"font-size:17px")
-        self.label_3.hide()
-
-        self.label2Hide = QtWidgets.QLabel(Form)
-        self.label2Hide.setGeometry(QtCore.QRect(110, 180, 600, 30))
-        self.label2Hide.setObjectName("label2Hide")
-        self.label2Hide.setStyleSheet("font-weight:200;\n"
-"font-size:15px")
-        self.label2Hide.setText("NOTE: Ajouter votre collection, taper votre requête et cliquer sur l’icône de recherche. ")
-
+        self.label_3.setStyleSheet("font-weight:500;\n" "font-size:17px")
 
         self.label_4 = QtWidgets.QLabel(Form)
         self.label_4.setObjectName("label_4")
-        self.label_4.setStyleSheet("background-color: #fff;\n"
-"border-top-left-radius: 15px;border-bottom-left-radius: 15px;border: 1px solid #0C2444;border-right:0px")
+        self.label_4.setStyleSheet("background-color: #fff;\n" "border-top-left-radius: 15px;border-bottom-left-radius: 15px;border: 1px solid #0C2444;border-right:0px")
         pixmap2 = QtGui.QPixmap('images/search.png').scaledToWidth(18)
         self.label_4.setPixmap(pixmap2)
         self.label_4.setGeometry(QtCore.QRect(140, 100, 30, 30))
@@ -96,7 +81,7 @@ class SearchSpaceVec(object):
         Form.setWindowTitle(_translate("Form", "MonChef. | Fr"))
         self.label.setText(_translate("Form", ""))
         self.label_2.setText(_translate("Form", ""))
-        self.label_3.setText(_translate("Form", "Les résultats de la recherche dans l'ordre de pertinence:"))
+        self.label_3.setText(_translate("Form", "Resultats:"))
         
         
         self.pushButton_2.setText(_translate("Form", "..."))
@@ -117,15 +102,13 @@ class SearchSpaceVec(object):
 
     def vectorialSearch(self, event = False):
         global repertory
-        self.label_3.show()
-        self.label2Hide.hide()
         query = str(self.lineEdit.text().lower())
         dirrr = str(repertory)+"/"
         result = []
 
         vectorial = Vectorial.Vectorial(str(dirrr), query)
 
-        result = vectorial.cosinusMesure()
+        result = vectorial.jaccardMesure()
         
         sizeResult = len(result)
 
@@ -133,7 +116,6 @@ class SearchSpaceVec(object):
         for i, res in zip(range(sizeResult),result):
             itemTodisplay = "RSV("+res[0]+",Q) = "+str(res[1])
             self.listWidget.addItem(itemTodisplay)
-        self.listWidget.show()
         self.listWidget.itemClicked.connect(self.openFile)
 
 
