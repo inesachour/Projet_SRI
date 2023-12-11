@@ -12,8 +12,7 @@ class SearchBoolUI(object):
         font = QtGui.QFont()
         font.setFamily("Lato")
         Form.setFont(font)
-        Form.setStyleSheet("background-color: #fff;\n"
-"color: #0C2444;")
+        Form.setStyleSheet("background-color: #fff;\n" "color: #0C2444;")
         self.closeWindow = Form.close
         
         Form.setWindowFlags(QtCore.Qt.FramelessWindowHint)
@@ -21,8 +20,7 @@ class SearchBoolUI(object):
         self.labelTitle = QtWidgets.QLabel(Form)
         self.labelTitle.setGeometry(QtCore.QRect(280, 35, 500, 30))
         self.labelTitle.setObjectName("labelTitle")
-        self.labelTitle.setStyleSheet("font-weight:500;\n"
-"font-size:20px")
+        self.labelTitle.setStyleSheet("font-weight:500;\n" "font-size:20px")
         self.labelTitle.setText("Recherche Booléenne")
 
         self.label = QtWidgets.QLabel(Form)
