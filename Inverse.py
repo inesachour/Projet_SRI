@@ -87,8 +87,6 @@ class Inverse():
                 freq.append(nbWordOcc)
             freq.append(self.nbDocsOcc(word))
             inv.extend([freq])
-        # print(files)
-        # print(inv)
         return inv
 
 
