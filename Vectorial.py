@@ -20,27 +20,6 @@ class Vectorial():
         propQuery = [word for word in propQuery if word not in stopwords.words('french')]
         return propQuery, nltk.FreqDist(propQuery)
 
-
-    def innerProduct(self):
-        propQuery, FreqDist = self.getPropQuery()
-        if self.exped == 1:
-            pond = Inverse.Inverse(self.directory).getPondSpec(propQuery)
-        else:
-            pond = Inverse.Inverse(self.directory, 2).getPondSpec(propQuery)
-
-        rsvDocs = []
-        for doc in pond:
-            RSV = 0
-            for docTuple in doc[1]:
-                if docTuple[0] in FreqDist.keys():
-                    word = docTuple[0]
-                    occ, freq = FreqDist[word], docTuple[1]
-                    RSV += occ * freq
-            rsvDocs.append((doc[0], round(float(RSV),3)))
-            rsvDocsSorted = sorted(rsvDocs, key=itemgetter(1), reverse=True)
-        return rsvDocsSorted
-
-
     def diceCoef(self):
         propQuery, FreqDist = self.getPropQuery()
         if self.exped == 1:
@@ -127,22 +106,3 @@ class Vectorial():
             rsvDocs.append((doc[0], round(float(RSV),3)))
             rsvDocsSorted = sorted(rsvDocs, key=itemgetter(1), reverse=True)
         return rsvDocsSorted
-
-
-
-
-
-
-# if __name__ == "__main__":
-#     a = "langage le python langage "
-    
-#     v = Vectorial('/media/said/DevStuff/Master2-Sii/RI/Projet_RI/docs/', a)
-
-#     # print("Dice coef", v.diceCoef())
-#     # print("Cos mesure", v.cosinusMesure())
-#     # print("Jaccard mesure", v.jaccardMesure())
-#     print("inner product", v.innerProduct())
-
-
-
-    
