@@ -9,12 +9,14 @@ class BooleanSearch():
         self.query = query
 
 
+    # Convert the query string into a list of individual elements
     def createQueryToEval(self):
         query = re.sub(r'\(', ' ( ', self.query)
         query = re.sub(r'\)', ' ) ', query)
         return query.split()
 
 
+    # Create a boolean query for evaluation based on the provided word list and query string
     def creatBoolQuery(self):
         querySplited = self.createQueryToEval()
         print(querySplited)
@@ -45,12 +47,6 @@ class BooleanSearch():
         print(newQuery)
         return newQuery
 
-
-if __name__ == "__main__":
-
-    bs = BooleanSearch(['bi', 'mi', 'hi'], 'nonmi')
-    cb = bs.creatBoolQuery()
-    print(eval(str(cb)))
 
 
 

@@ -13,6 +13,7 @@ class Indexation():
         return open(self.file, 'r').read().lower() if mode == 1 else open(self.file, 'w')
 
 
+    # Write a sorted dictionary to a file
     def writeSortedDic(self, dic):
         inv = open(self.file+'.inv', 'w')
         for item in sorted(dic.items()):
@@ -20,18 +21,21 @@ class Indexation():
             inv.write(toWrite+'\n')
 
 
+    # Remove stop words
     def dropEmptyWords(self):
         text = self.load(1) 
         splitedText = text.split()
         return [word for word in splitedText if word not in stopwords.words('english')]
 
 
+    # Remove punctuation
     def dropPonctuation(self):
         text = self.load(1)
         ponctuation = re.compile('[^\w\s]?', re.IGNORECASE)
         return re.sub(ponctuation, '', text)
 
 
+    # Split words containing apostrophes
     def dropApostrophe(self, text):
         listText = text
         for word in text:
@@ -42,7 +46,8 @@ class Indexation():
 
         return listText
 
-
+    
+    # Remove commas
     def dropVirgule(self, text):
         listText = text
         for word in text:
@@ -53,6 +58,7 @@ class Indexation():
         return listText
 
 
+    # Remove periods
     def dropPoint(self, text):
         listText = text
         for word in text:
@@ -63,11 +69,13 @@ class Indexation():
         return listText
 
 
+    # Get the frequency distribution of words
     def getFreqDist(self):
         text = self.getTextList()
         return nltk.FreqDist(text)
 
 
+    # Get the processed list of words
     def getTextList(self):
         text = self.load(1)
         text = self.dropPonctuation()
@@ -80,11 +88,13 @@ class Indexation():
         return text
 
 
+    # Count the occurrences of a specific word in the frequency distribution
     def nbWordOcc(self, word):
         freqDist = self.getFreqDist()
         return freqDist[word]
 
 
+    # Get the maximum frequency of any word in the frequency distribution
     def getMaxDist(self):
         from operator import itemgetter
         freqDist = self.getFreqDist()

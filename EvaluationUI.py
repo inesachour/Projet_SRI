@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import Indexation, VectorialSearch
+import VectorialSearch
 import functools
 
 repertory = ""
@@ -271,7 +271,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
-    ui = EvaluationSpace()
+    ui = EvaluationUI()
     ui.setupUi(Form)
     Form.move(300, 150)
     Form.show()

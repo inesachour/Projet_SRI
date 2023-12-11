@@ -12,6 +12,7 @@ class VectorialSearch():
         self.exped = exped
 
 
+    # Preprocess the query to create a proper query and its frequency distribution
     def getPropQuery(self):
         query = self.query
         ponctuation = re.compile('[^\w\s]?', re.IGNORECASE)
@@ -21,6 +22,7 @@ class VectorialSearch():
         return propQuery, nltk.FreqDist(propQuery)
     
 
+    # Calculate the Dice coefficient for the query against the documents
     def diceCoef(self):
         propQuery, FreqDist = self.getPropQuery()
         if self.exped == 1:
@@ -49,6 +51,7 @@ class VectorialSearch():
         return rsvDocsSorted
 
 
+    # Calculate the Cosine similarity for the query against the documents
     def cosinusMesure(self):
         propQuery, FreqDist = self.getPropQuery()
         if self.exped == 1:
@@ -81,6 +84,7 @@ class VectorialSearch():
         return rsvDocsSorted
 
 
+    # Calculate the Jaccard similarity for the query against the documents
     def jaccardMesure(self):
         propQuery, FreqDist = self.getPropQuery()
         if self.exped == 1:

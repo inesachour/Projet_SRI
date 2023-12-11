@@ -14,6 +14,7 @@ class Inverse():
         return os.listdir(self.directory)
 
 
+    # Build an inverted index from the frequency distribution of words in each document
     def buildInv(self):
         if self.exped == 1:
             files = self.dirFiles()
@@ -29,6 +30,7 @@ class Inverse():
             index.writeSortedDic(dic)
 
 
+    # Count the number of documents containing the specified word
     def nbDocsOcc(self, word):
         nbDocs = 0
         if self.exped == 1:
@@ -47,6 +49,7 @@ class Inverse():
         return nbDocs
 
 
+    # Get the set of unique words across all documents
     def getSetWords(self):
         wordsSet = []
         if self.exped == 1:
@@ -64,6 +67,7 @@ class Inverse():
         return(list(set(wordsSet)))
 
 
+    # Get the inverted index containing word frequencies and document occurrences
     def getInv(self):
         if self.exped == 1:
             files = self.dirFiles()
@@ -88,6 +92,7 @@ class Inverse():
         return inv
 
 
+    # Get the maximum frequency of any word in each document
     def getMaxDocsOcc(self):
         if self.exped == 1:
             files = self.dirFiles()
@@ -105,6 +110,7 @@ class Inverse():
         return maxs
 
 
+    # Calculate word ponderations based on term frequency and inverse document frequency
     def getPonderation(self):
         if self.exped == 1:
             files = self.dirFiles()
@@ -128,6 +134,7 @@ class Inverse():
         return ponderations
 
 
+    # Calculate word ponderations for a specific list of words
     def getPondSpec(self, wordList):
         if self.exped == 1:
             files = self.dirFiles()
@@ -157,4 +164,3 @@ class Inverse():
 if __name__ == "__main__":
     inv = Inverse('docs/') 
     wordList = ['langage', 'java']
-    print(inv.getPondSpec(wordList))
