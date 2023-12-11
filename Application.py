@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import SearchSpaceBool, SearchSpaceVec, EvaluationSpace
+import SearchBoolUI, SearchVecUI, EvaluationUI
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -74,19 +74,19 @@ class Ui_Form(object):
 
     def openBoolean(self, event):
         self.window = QtWidgets.QMainWindow()
-        self.ui = SearchSpaceBool.SearchSpaceBool()
+        self.ui = SearchBoolUI.SearchSpaceBool()
         self.ui.setupUi(self.window)
         self.window.show()
 
     def openVectorial(self, event):
         self.window = QtWidgets.QWidget()
-        self.ui = SearchSpaceVec.SearchSpaceVec()
+        self.ui = SearchVecUI.SearchSpaceVec()
         self.ui.setupUi(self.window)
         self.window.show()
 
     def openEvaluation(self, event):
         self.window = QtWidgets.QWidget()
-        self.ui = EvaluationSpace.EvaluationSpace()
+        self.ui = EvaluationUI.EvaluationSpace()
         self.ui.setupUi(self.window)
         self.window.show()
 

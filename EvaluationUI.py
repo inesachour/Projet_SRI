@@ -59,14 +59,6 @@ class EvaluationSpace(object):
         self.label_3.setStyleSheet("font-weight:500;\n" "font-size:17px")
         self.label_3.hide()
 
-        self.label2Hide = QtWidgets.QLabel(Form)
-        self.label2Hide.setGeometry(QtCore.QRect(110, 250, 600, 30))
-        self.label2Hide.setObjectName("label2Hide")
-        self.label2Hide.setStyleSheet("font-weight:200;\n" "font-size:15px")
-        self.label2Hide.setText("NOTE: Ajouter votre collection, taper votre requête et cliquer sur l’icône de recherche. ") 
-        self.label2Hide.hide()    
-
-
         self.label_4 = QtWidgets.QLabel(Form)
         self.label_4.setObjectName("label_4")
         self.label_4.setStyleSheet("background-color: #fff;\n" "border-top-left-radius: 15px;border-bottom-left-radius: 15px;border: 1px solid #0C2444;border-right:0px")
@@ -186,7 +178,6 @@ class EvaluationSpace(object):
         for file in self.files:
             self.listWidget.addItem(file)
 
-        self.label2Hide.hide()
         self.listWidget.show()
         self.listWidget2.show()
         self.listWidget.itemClicked.connect(self.addSelectItem)
