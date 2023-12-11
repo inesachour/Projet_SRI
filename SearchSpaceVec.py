@@ -33,34 +33,13 @@ class SearchSpaceVec(object):
         self.label_2.setGeometry(QtCore.QRect(710, 10, 67, 17))
         self.label_2.setObjectName("label_2")
 
-        pixmap = QtGui.QPixmap('images/MonChef-logo.png').scaledToWidth(90)
-        self.label_2.setPixmap(pixmap)
-        self.label_2.setGeometry(QtCore.QRect(680, 15, 100, 30))
-
         pixmap1 = QtGui.QPixmap('images/back.png').scaledToWidth(50)
         self.label.setPixmap(pixmap1)
         self.label.setGeometry(QtCore.QRect(25, 15, 50, 50))
         self.label.mousePressEvent = self.retour
 
-
-        self.label4Combo = QtWidgets.QLabel(Form)
-        self.label4Combo.setGeometry(QtCore.QRect(180, 110, 200, 30))
-        self.label4Combo.setObjectName("label4Combo")
-        self.label4Combo.setText("Choisissez le modèle:")
-        self.label4Combo.setStyleSheet("font-size:18px;font-weight:600")
-
-        self.comboBox = QtWidgets.QComboBox(Form)
-        self.comboBox.setGeometry(QtCore.QRect(390, 113, 200, 25))
-        self.comboBox.setFont(font)
-        self.comboBox.setStyleSheet("color:#0C2444;font-weight:600")
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem('Inner.Product')
-        self.comboBox.addItem('Dice.Coef')
-        self.comboBox.addItem('Cosinus.Mesure')
-        self.comboBox.addItem('Jaccard.Mesure')
-
         self.lineEdit = QtWidgets.QLineEdit(Form)
-        self.lineEdit.setGeometry(QtCore.QRect(170, 180, 450, 30))
+        self.lineEdit.setGeometry(QtCore.QRect(170, 100, 450, 30))
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit.setFrame(False)
         self.lineEdit.setStyleSheet("background-color: #fff;border: 1px solid #0C2444;border-left:0px")
@@ -69,7 +48,7 @@ class SearchSpaceVec(object):
 
 
         self.listWidget = QtWidgets.QListWidget(Form)
-        self.listWidget.setGeometry(QtCore.QRect(180, 280, 450, 200))
+        self.listWidget.setGeometry(QtCore.QRect(180, 200, 450, 200))
         self.listWidget.setObjectName("listWidget")
         self.listWidget.setStyleSheet("background-color:#f7f7f7;font-size:22px;font-weight:500;")
         self.listWidget.hide()
@@ -77,20 +56,20 @@ class SearchSpaceVec(object):
         self.pushButton_2 = QtWidgets.QPushButton(Form) 
         self.pushButton_2.setEnabled(True)
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.setGeometry(QtCore.QRect(600, 180, 50, 30))
+        self.pushButton_2.setGeometry(QtCore.QRect(600, 100, 50, 30))
         self.pushButton_2.setStyleSheet("background-color: #2596be;\n"
 "color:#fff;font-size:14px;border-top-right-radius: 15px;border-bottom-right-radius: 15px;")
         self.pushButton_2.clicked.connect(self.getDir)
 
         self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setGeometry(QtCore.QRect(150, 230, 500, 30))
+        self.label_3.setGeometry(QtCore.QRect(150, 150, 500, 30))
         self.label_3.setObjectName("label_3")
         self.label_3.setStyleSheet("font-weight:500;\n"
 "font-size:17px")
         self.label_3.hide()
 
         self.label2Hide = QtWidgets.QLabel(Form)
-        self.label2Hide.setGeometry(QtCore.QRect(110, 250, 600, 30))
+        self.label2Hide.setGeometry(QtCore.QRect(110, 180, 600, 30))
         self.label2Hide.setObjectName("label2Hide")
         self.label2Hide.setStyleSheet("font-weight:200;\n"
 "font-size:15px")
@@ -103,7 +82,7 @@ class SearchSpaceVec(object):
 "border-top-left-radius: 15px;border-bottom-left-radius: 15px;border: 1px solid #0C2444;border-right:0px")
         pixmap2 = QtGui.QPixmap('images/search.png').scaledToWidth(18)
         self.label_4.setPixmap(pixmap2)
-        self.label_4.setGeometry(QtCore.QRect(140, 180, 30, 30))
+        self.label_4.setGeometry(QtCore.QRect(140, 100, 30, 30))
         self.label_4.setDisabled(True)
         self.label_4.mousePressEvent = self.vectorialSearch
         self.lineEdit.returnPressed.connect(self.vectorialSearch)
@@ -146,17 +125,7 @@ class SearchSpaceVec(object):
 
         vectorial = Vectorial.Vectorial(str(dirrr), query)
 
-        choice = self.comboBox.currentText()
-        result = []
-        if choice == "Inner.Product":
-            result = vectorial.innerProduct()
-        elif choice == "Dice.Coef":
-            result = vectorial.diceCoef()
-        elif choice == "Cosinus.Mesure":
-            result = vectorial.cosinusMesure()
-        else:
-            result = vectorial.jaccardMesure()
-
+        result = vectorial.cosinusMesure()
         
         sizeResult = len(result)
 
