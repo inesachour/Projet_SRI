@@ -6,7 +6,7 @@ repertory = ""
 class EvaluationSpace(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.setFixedSize(800, 600)
+        Form.setFixedSize(800, 550)
         Form.setGeometry(300, 50, 800, 500)
         font = QtGui.QFont()
         font.setFamily("Lato")

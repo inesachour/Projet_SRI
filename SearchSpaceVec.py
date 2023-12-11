@@ -7,7 +7,7 @@ repertory = ""
 class SearchSpaceVec(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.setFixedSize(800, 500)
+        Form.setFixedSize(800, 450)
         Form.setGeometry(300, 150, 800, 500)
         font = QtGui.QFont()
         font.setFamily("Lato")

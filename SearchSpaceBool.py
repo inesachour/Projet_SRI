@@ -7,7 +7,7 @@ repertory = ""
 class SearchSpaceBool(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.setFixedSize(800, 500)
+        Form.setFixedSize(800, 450)
         Form.setGeometry(300, 150, 800, 500)
         font = QtGui.QFont()
         font.setFamily("Lato")
@@ -53,22 +53,13 @@ class SearchSpaceBool(object):
         self.pushButton_2.setEnabled(True)
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_2.setGeometry(QtCore.QRect(600, 100, 80, 30))
-        self.pushButton_2.setStyleSheet("background-color: #2596be;\n"
-"color:#fff;font-size:14px;border-top-right-radius: 15px;border-bottom-right-radius: 15px;")
+        self.pushButton_2.setStyleSheet("background-color: #2596be;\n" "color:#fff;font-size:14px;border-top-right-radius: 15px;border-bottom-right-radius: 15px;")
         self.pushButton_2.clicked.connect(self.getDir)
 
         self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setGeometry(QtCore.QRect(150, 180, 500, 30))
+        self.label_3.setGeometry(QtCore.QRect(150, 150, 500, 30))
         self.label_3.setObjectName("label_3")
-        self.label_3.setStyleSheet("font-weight:500;\n"
-"font-size:17px")
-        self.label_3.hide()
-
-        self.label2Hide = QtWidgets.QLabel(Form)
-        self.label2Hide.setGeometry(QtCore.QRect(110, 250, 600, 30))
-        self.label2Hide.setObjectName("label2Hide")
-        self.label2Hide.setStyleSheet("font-weight:200;\n" "font-size:15px")
-        self.label2Hide.setText("NOTE: Ajouter votre collection, taper votre requête et cliquer sur l’icône de recherche. ")     
+        self.label_3.setStyleSheet("font-weight:500;\n" "font-size:17px")
 
 
         self.label_4 = QtWidgets.QLabel(Form)
@@ -82,10 +73,9 @@ class SearchSpaceBool(object):
         self.lineEdit.returnPressed.connect(self.booleanSearch)
 
         self.listWidget = QtWidgets.QListWidget(Form)
-        self.listWidget.setGeometry(QtCore.QRect(180, 230, 450, 200))
+        self.listWidget.setGeometry(QtCore.QRect(180, 200, 450, 200))
         self.listWidget.setObjectName("listWidget")
         self.listWidget.setStyleSheet("background-color:#f7f7f7;font-size:22px;font-weight:500;")
-        self.listWidget.hide()
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -115,8 +105,6 @@ class SearchSpaceBool(object):
 
     def booleanSearch(self, event = False):
         global repertory
-        self.label_3.show()
-        self.label2Hide.hide()
         query = str(self.lineEdit.text().lower())
         dirrr = str(repertory)+"/"
         result = []
@@ -126,7 +114,6 @@ class SearchSpaceBool(object):
         sizeResult = len(result)
         for i, res in zip(range(sizeResult),result):
             self.listWidget.addItem(res)
-        self.listWidget.show()
 
         
     def openFile(self, item):
