@@ -79,7 +79,6 @@ class SearchVecUI(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "MonChef. | Fr"))
         self.label.setText(_translate("Form", ""))
         self.label_2.setText(_translate("Form", ""))
         self.label_3.setText(_translate("Form", "Résultats par ordre de pertinence:"))
@@ -132,7 +131,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
-    ui = SearchSpaceVec()
+    ui = SearchVecUI()
     ui.setupUi(Form)
     Form.move(300, 150)
     Form.show()
