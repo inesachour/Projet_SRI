@@ -8,9 +8,6 @@ class EvaluationUI(object):
         Form.setObjectName("Form")
         Form.setFixedSize(800, 550)
         Form.setGeometry(300, 50, 800, 500)
-        font = QtGui.QFont()
-        font.setFamily("Lato")
-        Form.setFont(font)
         Form.setStyleSheet("background-color: #fff;\n" "color: #0C2444;")
         self.closeWindow = Form.close
         

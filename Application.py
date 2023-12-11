@@ -4,9 +4,6 @@ import SearchBoolUI, SearchVecUI, EvaluationUI
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        font = QtGui.QFont()
-        font.setFamily("Lato")
-        Form.setFont(font)
         Form.setStyleSheet("background-color: #fff;\n" "color: #0C2444;")
         Form.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.hideWindow = Form.hide
