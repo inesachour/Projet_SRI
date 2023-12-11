@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import Vectorial
+import VectorialSearch
 import functools
 
 repertory = ""
@@ -106,7 +106,7 @@ class SearchSpaceVec(object):
         dirrr = str(repertory)+"/"
         result = []
 
-        vectorial = Vectorial.Vectorial(str(dirrr), query)
+        vectorial = VectorialSearch.VectorialSearch(str(dirrr), query)
 
         result = vectorial.jaccardMesure()
         

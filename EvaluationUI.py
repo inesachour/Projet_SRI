@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import Indexation, Vectorial
+import Indexation, VectorialSearch
 import functools
 
 repertory = ""
@@ -206,7 +206,7 @@ class EvaluationSpace(object):
 
         self.filesSelected, self.allFiles = dirrr, everything
 
-        vectorial = Vectorial.Vectorial(dirrr, query, 2)
+        vectorial = VectorialSearch.VectorialSearch(dirrr, query, 2)
         dice, cos, jaccard = [], [], []
         dice = vectorial.diceCoef()
         cos = vectorial.cosinusMesure()
@@ -227,8 +227,8 @@ class EvaluationSpace(object):
 
         query = str(self.lineEdit.text().lower())
         selected, everything = [], []
-        vectorial = Vectorial.Vectorial(dirrr, query, 2)
-        vectorialAll = Vectorial.Vectorial(allFiles, query, 2)
+        vectorial = VectorialSearch.VectorialSearch(dirrr, query, 2)
+        vectorialAll = VectorialSearch.VectorialSearch(allFiles, query, 2)
 
         selected = vectorial.jaccardMesure()
         everything = vectorialAll.jaccardMesure()  

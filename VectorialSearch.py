@@ -4,7 +4,7 @@ import Indexation, Inverse, re, nltk, math
 from nltk.corpus import stopwords
 from operator import itemgetter
 
-class Vectorial():
+class VectorialSearch():
 
     def __init__(self, directory = False, query = False, exped = 1):
         self.directory = directory
@@ -19,6 +19,7 @@ class Vectorial():
         propQuery = query.split()
         propQuery = [word for word in propQuery if word not in stopwords.words('french')]
         return propQuery, nltk.FreqDist(propQuery)
+    
 
     def diceCoef(self):
         propQuery, FreqDist = self.getPropQuery()
