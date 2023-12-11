@@ -109,7 +109,7 @@ class EvaluationSpace(object):
         self.pushButton3 = QtWidgets.QPushButton(Form) 
         self.pushButton3.setEnabled(True)
         self.pushButton3.setObjectName("pushButton3")
-        self.pushButton3.setGeometry(QtCore.QRect(290, 360, 100, 30))
+        self.pushButton3.setGeometry(QtCore.QRect(290, 320, 100, 30))
         self.pushButton3.setStyleSheet("background-color: #2596be;color:#fff;font-size:14px;border-radius: 15px")
         self.pushButton3.clicked.connect(self.vectorialSearch)
         self.pushButton3.clicked.connect(self.evaluation)
@@ -119,13 +119,13 @@ class EvaluationSpace(object):
         self.pushButton4 = QtWidgets.QPushButton(Form) 
         self.pushButton4.setEnabled(True)
         self.pushButton4.setObjectName("pushButton4")
-        self.pushButton4.setGeometry(QtCore.QRect(395, 360, 100, 30))
+        self.pushButton4.setGeometry(QtCore.QRect(395, 320, 100, 30))
         self.pushButton4.setStyleSheet("background-color: #2596be;color:#fff;font-size:14px;border-radius: 15px")
         self.pushButton4.clicked.connect(self.reinit)
 
 
         self.tableView = QtWidgets.QTableView(Form)
-        self.tableView.setGeometry(QtCore.QRect(145, 400, 515, 120))
+        self.tableView.setGeometry(QtCore.QRect(145, 360, 515, 120))
         self.tableView.setObjectName("tableView")
         self.model = QtGui.QStandardItemModel()
         self.model.setHorizontalHeaderLabels(['Inner. Product', 'Dice. Coef', 'Jaccard', 'Cosin'])
@@ -136,24 +136,24 @@ class EvaluationSpace(object):
         self.tableView.horizontalHeader().setDefaultSectionSize(124)
 
         self.label_5 = QtWidgets.QLabel(Form)
-        self.label_5.setGeometry(QtCore.QRect(145, 530, 120, 40))
+        self.label_5.setGeometry(QtCore.QRect(145, 490, 120, 40))
         self.label_5.setObjectName("label_5")
         self.label_5.setStyleSheet("font-weight:500;font-size:22px")
         self.label_5.setText('Rappel:')
 
         self.label_7 = QtWidgets.QLabel(Form)
-        self.label_7.setGeometry(QtCore.QRect(232, 532, 120, 40))
+        self.label_7.setGeometry(QtCore.QRect(232, 492, 120, 40))
         self.label_7.setObjectName("label_7")
         self.label_7.setStyleSheet("font-weight:500;font-size:18px")
 
         self.label_6 = QtWidgets.QLabel(Form)
-        self.label_6.setGeometry(QtCore.QRect(410, 530, 140, 40))
+        self.label_6.setGeometry(QtCore.QRect(410, 490, 140, 40))
         self.label_6.setObjectName("label_6")
         self.label_6.setStyleSheet("font-weight:500;font-size:22px")
         self.label_6.setText('Précision:')
 
         self.label_8 = QtWidgets.QLabel(Form)
-        self.label_8.setGeometry(QtCore.QRect(520, 532, 120, 40))
+        self.label_8.setGeometry(QtCore.QRect(520, 492, 120, 40))
         self.label_8.setObjectName("label_8")
         self.label_8.setStyleSheet("font-weight:500;font-size:18px")
 
