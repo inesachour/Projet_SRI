@@ -46,7 +46,3 @@ class BooleanSearch():
                 newQuery += " 0 "
         print(newQuery)
         return newQuery
-
-
-
-

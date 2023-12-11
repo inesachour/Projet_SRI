@@ -159,8 +159,3 @@ class Inverse():
         print(ponderations)
         return ponderations
         
-
-
-if __name__ == "__main__":
-    inv = Inverse('docs/') 
-    wordList = ['langage', 'java']

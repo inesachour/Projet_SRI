@@ -12,7 +12,6 @@ class Ui_Form(object):
         self.rech_bool = QtWidgets.QLabel(Form)
         self.rech_bool.setGeometry(QtCore.QRect(250, 50, 500, 75))
         font = QtGui.QFont()
-        font.setFamily("Lato")
         font.setPointSize(15)
         self.rech_bool.setFont(font)
         self.rech_bool.setObjectName("rech_bool")
@@ -21,7 +20,6 @@ class Ui_Form(object):
         self.rech_vect = QtWidgets.QLabel(Form)
         self.rech_vect.setGeometry(QtCore.QRect(250, 100, 500, 75))
         font = QtGui.QFont()
-        font.setFamily("Lato")
         font.setPointSize(15)
         self.rech_vect.setFont(font)
         self.rech_vect.setObjectName("rech_vect")
@@ -35,7 +33,6 @@ class Ui_Form(object):
         self.evaluation.mousePressEvent = self.openEvaluation
 
         font = QtGui.QFont()
-        font.setFamily("Lato")
         font.setPointSize(32)
         font.setBold(True)
         font.setWeight(75)
