@@ -10,27 +10,53 @@ class Ui_Form(object):
 
         #Recherche Booleenne
         self.rech_bool = QtWidgets.QLabel(Form)
-        self.rech_bool.setGeometry(QtCore.QRect(250, 50, 500, 75))
+        self.rech_bool.setGeometry(QtCore.QRect(250, 50, 500, 50))
         font = QtGui.QFont()
         font.setPointSize(15)
         self.rech_bool.setFont(font)
         self.rech_bool.setObjectName("rech_bool")
 
+         # Separator Line 1
+        self.line1 = QtWidgets.QFrame(Form)
+        self.line1.setGeometry(QtCore.QRect(240, 110, 300, 3))
+        self.line1.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line1.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line1.setObjectName("line1")
+
         #Recherche Vectorielle
         self.rech_vect = QtWidgets.QLabel(Form)
-        self.rech_vect.setGeometry(QtCore.QRect(250, 100, 500, 75))
+        self.rech_vect.setGeometry(QtCore.QRect(250, 120, 500, 50))
         font = QtGui.QFont()
         font.setPointSize(15)
         self.rech_vect.setFont(font)
         self.rech_vect.setObjectName("rech_vect")
 
+        # Separator Line 2
+        self.line2 = QtWidgets.QFrame(Form)
+        self.line2.setGeometry(QtCore.QRect(240, 180, 300, 3))
+        self.line2.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line2.setObjectName("line2")
+
         #Evaluation
         self.evaluation = QtWidgets.QLabel(Form)
-        self.evaluation.setGeometry(QtCore.QRect(250, 150, 500, 75))
+        self.evaluation.setGeometry(QtCore.QRect(250, 190, 500, 50))
         font = QtGui.QFont()
         font.setPointSize(15)
         self.evaluation.setFont(font)
         self.evaluation.setObjectName("evaluation")
+
+        # Separator Line 3
+        self.line3 = QtWidgets.QFrame(Form)
+        self.line3.setGeometry(QtCore.QRect(240, 250, 300, 3))
+        self.line3.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line3.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line3.setObjectName("line3")
+
+        # Empty space
+        self.space = QtWidgets.QFrame(Form)
+        self.space.setGeometry(QtCore.QRect(240, 260, 300, 20))
+        self.space.setObjectName("space")
 
         self.rech_bool.mousePressEvent = self.openBoolean
         self.rech_vect.mousePressEvent = self.openVectorial
@@ -48,7 +74,6 @@ class Ui_Form(object):
         self.exit.setPixmap(pixmap1)
         self.exit.setGeometry(QtCore.QRect(25, 15, 50, 50))
         self.exit.mousePressEvent = self.retour
-
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
