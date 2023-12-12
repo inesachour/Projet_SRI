@@ -103,7 +103,7 @@ class EvaluationUI(object):
         self.label_5 = QtWidgets.QLabel(Form)
         self.label_5.setGeometry(QtCore.QRect(145, 490, 120, 40))
         self.label_5.setObjectName("label_5")
-        self.label_5.setStyleSheet("font-weight:500; font-size:22px")
+        self.label_5.setStyleSheet("font-weight:500; font-size:20px; color: black")
         self.label_5.setText('Rappel:')
 
         self.label_7 = QtWidgets.QLabel(Form)
@@ -114,13 +114,13 @@ class EvaluationUI(object):
         self.label_6 = QtWidgets.QLabel(Form)
         self.label_6.setGeometry(QtCore.QRect(410, 490, 140, 40))
         self.label_6.setObjectName("label_6")
-        self.label_6.setStyleSheet("font-weight:500; font-size:22px")
+        self.label_6.setStyleSheet("font-weight:500; font-size:20px; color: black")
         self.label_6.setText('Précision:')
 
         self.label_8 = QtWidgets.QLabel(Form)
         self.label_8.setGeometry(QtCore.QRect(520, 492, 120, 40))
         self.label_8.setObjectName("label_8")
-        self.label_8.setStyleSheet("font-weight:500;font-size:18px")
+        self.label_8.setStyleSheet("font-weight:500; font-size:18px")
 
 
         self.retranslateUi(Form)

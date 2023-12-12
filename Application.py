@@ -62,9 +62,9 @@ class Ui_Form(object):
         self.rech_vect.mousePressEvent = self.openVectorial
         self.evaluation.mousePressEvent = self.openEvaluation
 
-        self.rech_vect.setStyleSheet("font-weight:600")
-        self.rech_bool.setStyleSheet("font-weight:600")
-        self.evaluation.setStyleSheet("font-weight:600")
+        self.rech_vect.setStyleSheet("font-weight:600; color: #2596be;")
+        self.rech_bool.setStyleSheet("font-weight:600; color: #2596be;")
+        self.evaluation.setStyleSheet("font-weight:600; color: #2596be;")
 
         self.exit = QtWidgets.QLabel(Form)
         self.exit.setGeometry(QtCore.QRect(20, 20, 67, 17))
