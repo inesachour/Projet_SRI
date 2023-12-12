@@ -4,7 +4,7 @@ import SearchBoolUI, SearchVecUI, EvaluationUI
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.setStyleSheet("background-color: #fff;\n" "color: #0C2444;")
+        Form.setStyleSheet("background-color: #fff; color: #0C2444;")
         Form.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.hideWindow = Form.hide
 
@@ -27,22 +27,18 @@ class Ui_Form(object):
         #Evaluation
         self.evaluation = QtWidgets.QLabel(Form)
         self.evaluation.setGeometry(QtCore.QRect(250, 150, 500, 75))
+        font = QtGui.QFont()
+        font.setPointSize(15)
         self.evaluation.setFont(font)
         self.evaluation.setObjectName("evaluation")
-        self.evaluation.setStyleSheet("font-weight:600")
-        self.evaluation.mousePressEvent = self.openEvaluation
-
-        font = QtGui.QFont()
-        font.setPointSize(32)
-        font.setBold(True)
-        font.setWeight(75)
 
         self.rech_bool.mousePressEvent = self.openBoolean
         self.rech_vect.mousePressEvent = self.openVectorial
+        self.evaluation.mousePressEvent = self.openEvaluation
 
         self.rech_vect.setStyleSheet("font-weight:600")
         self.rech_bool.setStyleSheet("font-weight:600")
-
+        self.evaluation.setStyleSheet("font-weight:600")
 
         self.exit = QtWidgets.QLabel(Form)
         self.exit.setGeometry(QtCore.QRect(20, 20, 67, 17))
